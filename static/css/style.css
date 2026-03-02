@@ -1,0 +1,36 @@
+body {
+    font-family: Arial;
+    background: #111827;
+    color: white;
+    margin: 0;
+}
+
+nav {
+    background: black;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    color: #4ade80;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.container {
+    padding: 40px;
+}
+
+.card {
+    background: #1f2937;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #4ade80;
+    border: none;
+    cursor: pointer;
+}
