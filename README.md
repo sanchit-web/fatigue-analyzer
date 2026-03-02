@@ -94,28 +94,38 @@ fatigue-analyzer/
 
 ## ⚙️ Installation & Setup
 
-1️⃣ Clone Repository
-```bash
+1️⃣ Clone the Repository
 git clone https://github.com/YOUR-USERNAME/fatigue-analyzer.git
 cd fatigue-analyzer
 2️⃣ Create Virtual Environment
+Windows (PowerShell)
 python -m venv venv
 venv\Scripts\activate
-3️⃣ Install Dependencies
+Mac / Linux
+python3 -m venv venv
+source venv/bin/activate
+3️⃣ Upgrade pip (Recommended)
+python -m pip install --upgrade pip
+4️⃣ Install Dependencies
+
+If you have requirements.txt:
+
 pip install -r requirements.txt
-4️⃣ Train ML Model (First-Time Setup)
+
+If not, install manually:
+
+pip install flask pandas scikit-learn joblib numpy
+5️⃣ Train the Machine Learning Model (First-Time Setup Only)
 cd model
 python train_model.py
 cd ..
-5️⃣ Run Application
+
+This will generate:
+
+model/fatigue_model.pkl
+6️⃣ Run the Application
 python app.py
-
-Open in browser:
-
+7️⃣ Open in Browser
 http://127.0.0.1:5000
-python app.py
 
-Open in browser:
-
-http://127.0.0.1:5000
 
