@@ -94,27 +94,28 @@ fatigue-analyzer/
 
 ## ⚙️ Installation & Setup
 
-### 1️⃣ Clone Repository
-
+1️⃣ Clone Repository
 ```bash
 git clone https://github.com/YOUR-USERNAME/fatigue-analyzer.git
 cd fatigue-analyzer
-
 2️⃣ Create Virtual Environment
 python -m venv venv
 venv\Scripts\activate
-
 3️⃣ Install Dependencies
 pip install -r requirements.txt
-
 4️⃣ Train ML Model (First-Time Setup)
 cd model
 python train_model.py
 cd ..
-
 5️⃣ Run Application
 python app.py
 
 Open in browser:
 
 http://127.0.0.1:5000
+python app.py
+
+Open in browser:
+
+http://127.0.0.1:5000
+
