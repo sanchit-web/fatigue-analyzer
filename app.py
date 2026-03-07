@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 import joblib
 import numpy as np
 import sqlite3
+from datetime import datetime
+import json
 
 app = Flask(__name__)
 
@@ -69,15 +71,23 @@ def predict():
 
 @app.route("/dashboard")
 def dashboard():
+
     conn = sqlite3.connect("database.db")
-    c = conn.cursor()
-    c.execute("SELECT score FROM records")
-    data = c.fetchall()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT score FROM records")
+    rows = cursor.fetchall()
+
     conn.close()
 
-    scores = [row[0] for row in data]
+    scores = [row[0] for row in rows]
+    dates = list(range(1, len(scores)+1))
 
-    return render_template("dashboard.html", scores=scores)
+    return render_template(
+        "dashboard.html",
+        dates=json.dumps(dates),
+        scores=json.dumps(scores)
+    )
 
 @app.route("/about")
 def about():

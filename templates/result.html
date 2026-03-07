@@ -1,9 +1,27 @@
 {% extends "base.html" %}
+
 {% block content %}
 
-<h1>Your Fatigue Score: {{ score }}</h1>
-<h2>Level: {{ level }}</h2>
+<h2>Fatigue Result</h2>
 
-<a href="/analyze"><button>Analyze Again</button></a>
+<div class="result-card">
+
+<p>Your Fatigue Score</p>
+
+<div class="score">
+{{ score }}
+</div>
+
+<p>Risk Level: <b>{{ level }}</b></p>
+
+<p>{{ recommendation }}</p>
+
+</div>
+
+<br>
+
+<a href="/analyze">
+<button>Analyze Again</button>
+</a>
 
 {% endblock %}

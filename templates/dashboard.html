@@ -1,25 +1,32 @@
 {% extends "base.html" %}
+
 {% block content %}
 
-<h1>Fatigue History</h1>
+<h2>Fatigue Dashboard</h2>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <canvas id="chart"></canvas>
 
 <script>
-let scores = {{ scores|tojson }};
 
-new Chart(document.getElementById("chart"), {
-    type: 'line',
-    data: {
-        labels: scores.map((_, i) => i + 1),
-        datasets: [{
-            label: "Fatigue Score",
-            data: scores
-        }]
-    }
+var ctx = document.getElementById("chart");
+
+new Chart(ctx,{
+type:"line",
+data:{
+labels: {{ dates | safe }},
+datasets:[{
+label:"Fatigue Score",
+data: {{ scores | safe }},
+borderWidth:2
+}]
+},
+options:{
+responsive:true
+}
 });
+
 </script>
 
 {% endblock %}
